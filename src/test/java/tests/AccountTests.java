@@ -30,7 +30,7 @@ public class AccountTests {
         };
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void adminCreateAccountTest() {
 
         given()
@@ -51,7 +51,7 @@ public class AccountTests {
                 .statusCode(201);
     }
 
-    @Test
+    @Test(groups = {"lowPrio"})
     public void adminCreateAccountShouldReturnNonNullDateTest() {
 
         Response response =
@@ -75,7 +75,7 @@ public class AccountTests {
                 .body("createdAt", notNullValue());
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void userCreateAccountTest() {
 
         given()
@@ -96,7 +96,7 @@ public class AccountTests {
                 .statusCode(201);
     }
 
-    @Test(dataProvider = "invalidNames")
+    @Test(groups = {"regression"}, dataProvider = "invalidNames")
     public void adminCreateAccountInvalidNamesTest(String name) {
 
         Response response =

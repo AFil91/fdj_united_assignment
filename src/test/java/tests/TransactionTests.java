@@ -29,7 +29,7 @@ public class TransactionTests {
         };
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void adminCreateDepositTransactionTest() {
         Response before = given()
                 .auth().preemptive()
@@ -66,7 +66,7 @@ public class TransactionTests {
         assertEquals(afterBalance, beforeBalance + 10);
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void userCreateDepositTransactionTest() {
         Response before = given()
                 .auth().preemptive()
@@ -103,7 +103,7 @@ public class TransactionTests {
         assertEquals(afterBalance, beforeBalance + 10);
     }
 
-    @Test(dataProvider = "invalidAmounts")
+    @Test(groups = {"smoke","regression"}, dataProvider = "invalidAmounts")
     public void adminCreateDepositTransactionWithInvalidAmountTest(Object value) {
 
         given()

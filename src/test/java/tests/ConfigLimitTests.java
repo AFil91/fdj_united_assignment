@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 
 public class ConfigLimitTests {
-    @Test
+    @Test(groups = {"smoke"})
     public void getConfigLimitTest() {
 
         baseURI = Config.BASE_URL;

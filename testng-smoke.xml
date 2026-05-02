@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="API Smoke Suite">
+
+    <test name="Smoke Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="tests.ConfigLimitTests"/>
+            <class name="tests.AccountTests"/>
+            <class name="tests.TransactionTests"/>
+        </classes>
+    </test>
+
+</suite>
