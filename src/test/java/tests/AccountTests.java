@@ -93,7 +93,7 @@ public class AccountTests {
                 .post("/accounts")
                 .then()
                 .log().all()
-                .statusCode(201);
+                .statusCode(403);
     }
 
     @Test(groups = {"regression"}, dataProvider = "invalidNames")
